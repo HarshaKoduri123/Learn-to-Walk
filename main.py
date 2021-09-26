@@ -5,20 +5,17 @@ from utils import plot_learning_curve
 
 
 if __name__ == '__main__':
-    #env = gym.make('LunarLanderContinuous-v2')
-    #env = gym.make('Pendulum-v0')
+    
     env = gym.make('BipedalWalker-v3')
     agent = Agent(alpha=0.001, beta=0.001,
             input_dims=env.observation_space.shape, tau=0.005,
             env=env, batch_size=100, layer1_size=400, layer2_size=300,
             n_actions=env.action_space.shape[0])
-    n_games = 1000
+    n_games = 300
     filename = 'Results/' + 'walker_' + str(n_games) + '_games.png'
 
     best_score = env.reward_range[0]
     score_history = []
-
-    #agent.load_models()
 
     for i in range(n_games):
         observation = env.reset()
