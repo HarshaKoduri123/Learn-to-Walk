@@ -11,7 +11,7 @@ if __name__ == '__main__':
             input_dims=env.observation_space.shape, tau=0.005,
             env=env, batch_size=100, layer1_size=400, layer2_size=300,
             n_actions=env.action_space.shape[0])
-    n_games = 300
+    n_games = 1000
     filename = 'Results/' + 'walker_' + str(n_games) + '_games.png'
 
     best_score = env.reward_range[0]
